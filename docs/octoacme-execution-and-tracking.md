@@ -17,24 +17,43 @@ Guidance for managing day-to-day execution and tracking progress toward project 
   - Require at least one approval before merging (or team-defined policy)
 
 ## Quality & Testing
-- Unit tests for new logic
-- Integration tests where applicable
-- End-to-end smoke tests for critical flows before release
-- Security scanning in CI
-- Manual QA for feature acceptance when needed
+- Unit tests for new logic (Developer responsibility)
+- Integration tests where applicable (Developer + QA Engineer)
+- End-to-end smoke tests for critical flows before release (QA Engineer)
+- Security scanning in CI (automated; Security Engineer reviews findings)
+- Manual QA for feature acceptance when needed (QA Engineer sign-off)
+- Architecture review for significant design changes (Technical Lead)
+
+## Role Responsibilities During Execution
+
+| Role | Primary Activities |
+|---|---|
+| Developer | Build features, write unit tests, submit PRs, fix defects |
+| QA Engineer | Define test cases, run acceptance and regression tests, validate DoD |
+| Technical Lead | Review architecture, unblock technical decisions, mentor team |
+| DevOps/Platform Engineer | Maintain CI/CD, monitor environments, support deployments |
+| Security Engineer | Triage security scan findings, review high-risk features, update risk register |
+| Product Manager | Clarify requirements, validate acceptance criteria, prioritize defects |
+| Project Manager | Track progress, manage risks and blockers, update stakeholders |
 
 ## Reporting & Metrics
 - Track velocity and burndown
 - Monitor success metrics identified in the Project One-pager
 - Use dashboards for key signals (errors, latency, usage)
+- Security findings tracked in the security risk backlog (Security Engineer)
+- Infrastructure/deployment metrics monitored by DevOps/Platform Engineer
 
 ## Blocker Escalation
 - Level 1: Team-level triage in daily standup
 - Level 2: PM escalates to Product Lead and dependent teams
 - Level 3: Sponsor-level escalation for business-impacting issues
+- Security incidents: escalate immediately to Security Engineer and management
 
 ## Execution Checklist
 - [ ] Branching and PR conventions documented in repo
 - [ ] CI configured for tests and lint
+- [ ] Security scanning enabled in CI pipeline
 - [ ] Regular demos scheduled
 - [ ] Risk register updated weekly
+- [ ] QA test plan aligned to acceptance criteria
+- [ ] Technical Lead identified and engaged for architectural decisions
